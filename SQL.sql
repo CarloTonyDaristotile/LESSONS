@@ -25,4 +25,5 @@ SELECT * FROM movies WHERE imdb_rating > 8;
 
 SELECT * FROM movies WHERE name LIKE 'Se_en';
 
+
 SELECT * FROM movies WHERE name LIKE 'a%';
