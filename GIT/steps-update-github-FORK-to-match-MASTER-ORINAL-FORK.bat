@@ -1,7 +1,11 @@
->git remote add upstream https://github.com/akhan118/Coding-Crash-Course.git
->git fetch upstream
->git checkout master
+// LINK
+// https://stackoverflow.com/questions/40602721/syncing-fork-with-upstream-git-fetch-git-checkout-git-merge-vs-git-checkou
 
-//confused as to which here below
->git pull upstream master
->git merge upstream/master
+git remote add upstream https://github.com/akhan118/Coding-Crash-Course.git
+
+// NOTE! git pull = git fetch + git merge
+// 3 steps
+
+git fetch upstream
+git checkout master
+git merge upstream/master
