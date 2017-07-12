@@ -1,0 +1,8 @@
+How to open a html.php document
+
+1) Run MAMP
+2) Open Prferences
+3) Tab Web Server
+4) Document Root:(Folder with html.doc)
+5) Open IE or Chrome
+6) web address=localhost
