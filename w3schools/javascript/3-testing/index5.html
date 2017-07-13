@@ -4,9 +4,9 @@
 
         <style>
             .btn {
-                background-color: "white";
+                background-color: white;
                 border: none;
-                color: white;
+                color: black;                
                 padding: 15px 32px;
                 text-align: center;
                 text-decoration: none;
@@ -22,26 +22,82 @@
 
         <script>
 
+            window.onload = re_start;
+
             gameover = false;
-            turnOfPlayerA=true;
-            turnOfPlayerB=false;
+            turnOfPlayer_X=true;
+            turnOfPlayer_O=false;
+            count_squares_played=0;
+
+            function re_start(){
+                count_squares_played = 0;
+                
+                if ( turnOfPlayer_X == true ){
+                    document.getElementById("STATS").innerHTML = "Play [ X's ]";
+                }else{
+                    document.getElementById("STATS").innerHTML = "Play [ O's ]";
+                }
+                
+//                nodeList_XOs=document.getElementsByClassName("btn");
+//                for( node in nodeList_XOs  ){
+//                    node.element.innerHTML = "-";
+//                }
+                
+                document.getElementById("R0C0").innerHTML = "-";
+                document.getElementById("R0C1").innerHTML = "-";
+                document.getElementById("R0C2").innerHTML = "-";
+                document.getElementById("R1C0").innerHTML = "-";
+                document.getElementById("R1C1").innerHTML = "-";
+                document.getElementById("R1C2").innerHTML = "-";
+                document.getElementById("R2C0").innerHTML = "-";
+                document.getElementById("R2C1").innerHTML = "-";
+                document.getElementById("R2C2").innerHTML = "-";
+                
+                document.getElementById("R0C0").style.backgroundColor = "white";
+                document.getElementById("R0C1").style.backgroundColor = "white";
+                document.getElementById("R0C2").style.backgroundColor = "white";
+                document.getElementById("R1C0").style.backgroundColor = "white";
+                document.getElementById("R1C1").style.backgroundColor = "white";
+                document.getElementById("R1C2").style.backgroundColor = "white";
+                document.getElementById("R2C0").style.backgroundColor = "white";
+                document.getElementById("R2C1").style.backgroundColor = "white";
+                document.getElementById("R2C2").style.backgroundColor = "white";
+                
+                document.getElementById("R0C0").style.color = "black";
+                document.getElementById("R0C1").style.color = "black";
+                document.getElementById("R0C2").style.color = "black";
+                document.getElementById("R1C0").style.color = "black";
+                document.getElementById("R1C1").style.color = "black";
+                document.getElementById("R1C2").style.color = "black";
+                document.getElementById("R2C0").style.color = "black";
+                document.getElementById("R2C1").style.color = "black";
+                document.getElementById("R2C2").style.color = "black";
+            }
 
             function func_XsOs() {
-
+                //if button is hit
                 if ( document.activeElement.className == "btn"){
-                    //switch players for next hit
-                    if ( turnOfPlayerA == true ){
-                        document.activeElement.innerHTML = "X";
-                        document.activeElement.style.backgroundColor = "yellow";
-                        document.activeElement.style.color = "red";
-                        turnOfPlayerA = false;
-                        turnOfPlayerB = true;
-                    }else{
-                        document.activeElement.innerHTML = "O";
-                        document.activeElement.style.backgroundColor = "red";
-                        document.activeElement.style.color = "yellow";
-                        turnOfPlayerA = true;
-                        turnOfPlayerB = false;
+                    if ( document.activeElement.innerHTML == "-"){
+                        count_squares_played = count_squares_played+1;
+                        //switch players for next hit
+                        if ( turnOfPlayer_X == true ){
+                            document.activeElement.innerHTML = "X";
+                            document.activeElement.style.backgroundColor = "yellow";
+                            document.activeElement.style.color = "red";
+                            turnOfPlayer_X = false;
+                            turnOfPlayer_O = true;
+                            document.getElementById("STATS").innerHTML = "Play [ O's ] " + count_squares_played;
+                        }else{
+                            document.activeElement.innerHTML = "O";
+                            document.activeElement.style.backgroundColor = "red";
+                            document.activeElement.style.color = "yellow";
+                            turnOfPlayer_X = true;
+                            turnOfPlayer_O = false;
+                            document.getElementById("STATS").innerHTML = "Play [ X's ] " + count_squares_played;
+                        }
+                    }
+                    if(count_squares_played==9){
+                        re_start();
                     }
                 }
 
@@ -53,21 +109,25 @@
 
     <body>
 
-        <button class="btn" id="R0C0" onclick="func_XsOs()">-</button>
-        <button class="btn" id="R0C1" onclick="func_XsOs()">-</button>
-        <button class="btn" id="R0C2" onclick="func_XsOs()">-</button>
+        <p id="STATS" onload="start()" style="border-color: black;border-width: medium;display: inline-block;background-color: chartreuse"></p>
 
         <br/>
 
-        <button class="btn" id="R1C0" onclick="func_XsOs()">-</button>
-        <button class="btn" id="R1C1" onclick="func_XsOs()">-</button>
-        <button class="btn" id="R1C2" onclick="func_XsOs()">-</button>
+        <button class="btn" id="R0C0" onclick="func_XsOs()"></button>
+        <button class="btn" id="R0C1" onclick="func_XsOs()"></button>
+        <button class="btn" id="R0C2" onclick="func_XsOs()"></button>
 
         <br/>
 
-        <button class="btn" id="R2C0" onclick="func_XsOs()">-</button>
-        <button class="btn" id="R2C1" onclick="func_XsOs()">-</button>
-        <button class="btn" id="R2C2" onclick="func_XsOs()">-</button>
+        <button class="btn" id="R1C0" onclick="func_XsOs()"></button>
+        <button class="btn" id="R1C1" onclick="func_XsOs()"></button>
+        <button class="btn" id="R1C2" onclick="func_XsOs()"></button>
+
+        <br/>
+
+        <button class="btn" id="R2C0" onclick="func_XsOs()"></button>
+        <button class="btn" id="R2C1" onclick="func_XsOs()"></button>
+        <button class="btn" id="R2C2" onclick="func_XsOs()"></button>
 
     </body>
 
