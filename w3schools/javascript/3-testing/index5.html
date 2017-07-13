@@ -5,7 +5,7 @@
         <style>
             .btn {
                 background-color: white;
-                border: none;
+
                 color: black;                
                 padding: 15px 32px;
                 text-align: center;
@@ -17,6 +17,7 @@
                 min-width: 200px;
                 height: 200px;
                 width: auto;
+                border-style: solid;
             }
         </style>
 
@@ -31,18 +32,18 @@
 
             function re_start(){
                 count_squares_played = 0;
-                
+
                 if ( turnOfPlayer_X == true ){
                     document.getElementById("STATS").innerHTML = "Play [ X's ]";
                 }else{
                     document.getElementById("STATS").innerHTML = "Play [ O's ]";
                 }
-                
-//                nodeList_XOs=document.getElementsByClassName("btn");
-//                for( node in nodeList_XOs  ){
-//                    node.element.innerHTML = "-";
-//                }
-                
+
+                //                nodeList_XOs=document.getElementsByClassName("btn");
+                //                for( node in nodeList_XOs  ){
+                //                    node.element.innerHTML = "-";
+                //                }
+
                 document.getElementById("R0C0").innerHTML = "-";
                 document.getElementById("R0C1").innerHTML = "-";
                 document.getElementById("R0C2").innerHTML = "-";
@@ -52,7 +53,7 @@
                 document.getElementById("R2C0").innerHTML = "-";
                 document.getElementById("R2C1").innerHTML = "-";
                 document.getElementById("R2C2").innerHTML = "-";
-                
+
                 document.getElementById("R0C0").style.backgroundColor = "white";
                 document.getElementById("R0C1").style.backgroundColor = "white";
                 document.getElementById("R0C2").style.backgroundColor = "white";
@@ -62,7 +63,7 @@
                 document.getElementById("R2C0").style.backgroundColor = "white";
                 document.getElementById("R2C1").style.backgroundColor = "white";
                 document.getElementById("R2C2").style.backgroundColor = "white";
-                
+
                 document.getElementById("R0C0").style.color = "black";
                 document.getElementById("R0C1").style.color = "black";
                 document.getElementById("R0C2").style.color = "black";
@@ -77,6 +78,10 @@
             function func_XsOs() {
                 //if button is hit
                 if ( document.activeElement.className == "btn"){
+                    if(count_squares_played==9){
+                        re_start();
+                        return;
+                    }
                     if ( document.activeElement.innerHTML == "-"){
                         count_squares_played = count_squares_played+1;
                         //switch players for next hit
@@ -86,18 +91,15 @@
                             document.activeElement.style.color = "red";
                             turnOfPlayer_X = false;
                             turnOfPlayer_O = true;
-                            document.getElementById("STATS").innerHTML = "Play [ O's ] " + count_squares_played;
+                            document.getElementById("STATS").innerHTML = "Play [ O's ]";
                         }else{
                             document.activeElement.innerHTML = "O";
                             document.activeElement.style.backgroundColor = "red";
                             document.activeElement.style.color = "yellow";
                             turnOfPlayer_X = true;
                             turnOfPlayer_O = false;
-                            document.getElementById("STATS").innerHTML = "Play [ X's ] " + count_squares_played;
+                            document.getElementById("STATS").innerHTML = "Play [ X's ]";
                         }
-                    }
-                    if(count_squares_played==9){
-                        re_start();
                     }
                 }
 
