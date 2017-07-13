@@ -1,49 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
 
-<style>
-.btn {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 32px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-</style>
+        <style>
+            .btn {
+                background-color: "white";
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 150px;
+                margin: 4px 4px;
+                cursor: pointer;
+                min-width: 200px;
+                height: 200px;
+                width: auto;
+            }
+        </style>
 
-<script>
+        <script>
 
-function func_x0y0() {
-  if ( document.getElementById("x0y0").innerHTML == "X" ){
-      document.getElementById("x0y0").innerHTML = "O";
-      
-  }else{
-    document.getElementById("x0y0").innerHTML = "X";
-  }
-}
+            gameover = false;
+            turnOfPlayerA=true;
+            turnOfPlayerB=false;
 
-function func_x0y1() {
-  if ( document.getElementById("x0y1").innerHTML == "X" ){
-      document.getElementById("x0y1").innerHTML = "O";
-  }else{
-    document.getElementById("x0y1").innerHTML = "X";
-  }
-}
+            function func_XsOs() {
 
-</script>
-</head>
+                if ( document.activeElement.className == "btn"){
+                    //switch players for next hit
+                    if ( turnOfPlayerA == true ){
+                        document.activeElement.innerHTML = "X";
+                        document.activeElement.style.backgroundColor = "yellow";
+                        document.activeElement.style.color = "red";
+                        turnOfPlayerA = false;
+                        turnOfPlayerB = true;
+                    }else{
+                        document.activeElement.innerHTML = "O";
+                        document.activeElement.style.backgroundColor = "red";
+                        document.activeElement.style.color = "yellow";
+                        turnOfPlayerA = true;
+                        turnOfPlayerB = false;
+                    }
+                }
 
-<body>
+            }
 
-<button class="btn" id="x0y0" onclick="func_x0y0()">-</button>
 
-<button class="btn" id="x0y1" onclick="func_x0y1()">-</button>
+        </script>
+    </head>
 
-</body>
+    <body>
+
+        <button class="btn" id="R0C0" onclick="func_XsOs()">-</button>
+        <button class="btn" id="R0C1" onclick="func_XsOs()">-</button>
+        <button class="btn" id="R0C2" onclick="func_XsOs()">-</button>
+
+        <br/>
+
+        <button class="btn" id="R1C0" onclick="func_XsOs()">-</button>
+        <button class="btn" id="R1C1" onclick="func_XsOs()">-</button>
+        <button class="btn" id="R1C2" onclick="func_XsOs()">-</button>
+
+        <br/>
+
+        <button class="btn" id="R2C0" onclick="func_XsOs()">-</button>
+        <button class="btn" id="R2C1" onclick="func_XsOs()">-</button>
+        <button class="btn" id="R2C2" onclick="func_XsOs()">-</button>
+
+    </body>
+
 </html>
