@@ -3,7 +3,7 @@
 <head>
 
 <style>
-.button {
+.btn {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -22,6 +22,7 @@
 function func_x0y0() {
   if ( document.getElementById("x0y0").innerHTML == "X" ){
       document.getElementById("x0y0").innerHTML = "O";
+      
   }else{
     document.getElementById("x0y0").innerHTML = "X";
   }
@@ -40,9 +41,9 @@ function func_x0y1() {
 
 <body>
 
-<button class="button" id="x0y0" onclick="func_x0y0()">-</button>
+<button class="btn" id="x0y0" onclick="func_x0y0()">-</button>
 
-<button class="button" id="x0y1" onclick="func_x0y1()">-</button>
+<button class="btn" id="x0y1" onclick="func_x0y1()">-</button>
 
 </body>
 </html>
