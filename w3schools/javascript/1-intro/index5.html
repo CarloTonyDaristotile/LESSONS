@@ -3,8 +3,20 @@
 <head>
 <script>
 
-function myFunctionX() {
-    document.getElementById("demo1").innerHTML = "Paragraph changed.";
+function func_x0y0() {
+  if ( document.getElementById("x0y0").innerHTML == "X" ){
+      document.getElementById("x0y0").innerHTML = "O";
+  }else{
+    document.getElementById("x0y0").innerHTML = "X";
+  }
+}
+
+function func_x0y1() {
+  if ( document.getElementById("x0y1").innerHTML == "X" ){
+      document.getElementById("x0y1").innerHTML = "O";
+  }else{
+    document.getElementById("x0y1").innerHTML = "X";
+  }
 }
 
 </script>
@@ -12,11 +24,10 @@ function myFunctionX() {
 
 <body>
 
-<h1>A Web Page</h1>
+<button id="x0y0" type="button" onclick="func_x0y0()">-</button>
 
-<p id="demo1">A Paragraph</p>
+<button id="x0y1" type="button" onclick="func_x0y1()">-</button>
 
-<button type="button" onclick="myFunctionX()">Try it</button>
 
 </body>
 </html>
