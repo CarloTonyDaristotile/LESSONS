@@ -35,7 +35,7 @@ id	name	        category	        downloads	price
 30	Basecode	    Sports          	21203	    3.99
 45	Hayholding	    Medical         	15845	    14.99
 59	Sailflex	    Productivity	    21984	    0.99
-60	waretam	        Catalogs	        31090	    2.99
+60	waretam	        Catalogs	        31090	    2.99 
 62	Donelectrics	News	            6650	    1.99
 81	sonelectrics	Entertainment	    9297	    1.99
 89	Zoodom	        Food & Drink	    29619	    14.99
@@ -62,7 +62,7 @@ SELECT price, COUNT(*) FROM fake_apps GROUP BY price;
 grouping by price
 
 price	COUNT(*)
-0.0	  73
+0.0	    73
 0.99	43
 1.99	42
 2.99	21
@@ -74,7 +74,7 @@ price	COUNT(*)
 SELECT price , COUNT(*) FROM fake_apps WHERE downloads > 20000 GROUP BY price;
 /*
 price	COUNT(*)
-0.0	  26
+0.0	    26
 0.99	17
 1.99	18
 2.99	7
@@ -98,10 +98,10 @@ Books	    160864
 Business	178726
 Catalogs	186158
 Education	184724
-Finance	  178163
+Finance	    178163
 Games	    256083
 Lifestyle	166832
-Medical	  77191
+Medical	    77191
 Music	    59367
 ...
 */
