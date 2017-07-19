@@ -25,20 +25,20 @@ ROUND() takes two arguments, a column name and the number of decimal places to r
 SELECT * FROM fake_apps;
 /*
 id	name	        category	        downloads	price
-3	  siliconphase	Productivity	    17193   	0.0
-6	  Donzolab	    Education       	4259	    0.99
-10	Ittechi	      Reference       	3874	    0.0
+3	siliconphase	Productivity	    17193   	0.0
+6	Donzolab	    Education       	4259	    0.99
+10	Ittechi	        Reference       	3874	    0.0
 13	Subdrill	    Education       	7132	    1.99
-14	Anzoom	      Health & Fitness	6941	    14.99
-21	kanity	      Health & Fitness	2299	    0.0
+14	Anzoom	        Health & Fitness	6941	    14.99
+21	kanity	        Health & Fitness	2299	    0.0
 25	Zathcare	    Books           	16281	    2.99
 30	Basecode	    Sports          	21203	    3.99
-45	Hayholding	  Medical         	15845	    14.99
+45	Hayholding	    Medical         	15845	    14.99
 59	Sailflex	    Productivity	    21984	    0.99
-60	waretam	      Catalogs	        31090	    2.99
+60	waretam	        Catalogs	        31090	    2.99
 62	Donelectrics	News	            6650	    1.99
 81	sonelectrics	Entertainment	    9297	    1.99
-89	Zoodom	      Food & Drink	    29619	    14.99
+89	Zoodom	        Food & Drink	    29619	    14.99
 */
 
 SELECT COUNT(*) FROM fake_apps;
